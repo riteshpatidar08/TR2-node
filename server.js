@@ -37,7 +37,7 @@ app.use((req,res,next)=>{
 //NOTE default api address
 //NOTE seprate routes for user
 app.use('/api',require('./routes/userRoutes')) ;
-
+app.use('/api',require('./routes/productRoutes'))
 // res.json({data : userData})
 
 app.listen(3000,()=>{
