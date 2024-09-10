@@ -9,10 +9,12 @@ router.get('/getproducts', productController.getProduct) ;
 //NOTE adding new product
 router.post('/createproduct', productController.createProduct) ;
 
-
 //NOTE fetching single product
 router.get('/singleproduct/:id',productController.singleProduct)
 
-router.delete('/deleteproduct/:id',productController.deleteProduct)
+//NOTE delete a single product 
+router.delete('/deleteproduct/:id',productController.deleteProduct) ;
 
-module.exports = router
+router.put('/updateproduct/:id' , productController.updateProduct) 
+
+module.exports = router ;

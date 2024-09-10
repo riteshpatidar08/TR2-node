@@ -39,3 +39,16 @@ exports.deleteProduct = (req,res)=>{
    
    
 }
+
+exports.updateProduct = (req,res)=>{
+     const id = parseInt(req.params.id);
+     const updatedProduct = req.body
+     const singleProduct = product.find((el)=>{
+      return  el.id === id
+     })
+     console.log(singleProduct)
+     singleProduct.price = updatedProduct.price
+     res.json({
+        data : singleProduct
+     })
+}
