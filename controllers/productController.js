@@ -14,3 +14,15 @@ exports.createProduct = (req,res) => {
         data : product
     })
 }
+
+exports.singleProduct = (req,res)=>{
+   const id = parseInt(req.params.id);
+   console.log(id) ;
+   const filterProduct = product.filter((el)=> el.id === id) ;
+   if(filterProduct){
+    res.json({
+        data : filterProduct
+    })
+   }
+   
+}
