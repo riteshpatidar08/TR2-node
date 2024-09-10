@@ -13,4 +13,6 @@ router.post('/createproduct', productController.createProduct) ;
 //NOTE fetching single product
 router.get('/singleproduct/:id',productController.singleProduct)
 
+router.delete('/deleteproduct/:id',productController.deleteProduct)
+
 module.exports = router

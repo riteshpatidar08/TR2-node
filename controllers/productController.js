@@ -26,3 +26,16 @@ exports.singleProduct = (req,res)=>{
    }
    
 }
+
+
+exports.deleteProduct = (req,res)=>{
+   const id = parseInt(req.params.id);
+   console.log(id) ;
+   const filterProduct = product.filter((el)=> el.id !== id) ;
+  
+    res.json({
+        data : filterProduct
+    })
+   
+   
+}
