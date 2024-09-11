@@ -52,3 +52,11 @@ exports.updateProduct = (req,res)=>{
         data : singleProduct
      })
 }
+
+
+//NOTE     nosql(mongodb)   and    sql 
+
+        //    Database            Database 
+        //    Collections         Tables
+        //    Documents           Rows   
+        

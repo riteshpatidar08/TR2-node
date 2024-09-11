@@ -1,8 +1,13 @@
 const express = require('express') ;
 const chalk = require('chalk') ;
 const app = express() ;
+const mongoose = require('mongoose') ;
 
-// const userRoutes = require('./routes/userRoutes')
+//NOTE this method will connect the mongodb server to the nodejs application.
+
+mongoose.connect('mongodb://localhost:27017/').then(()=>{
+    console.log(chalk.red('MONGODB is connected'))
+})
 
 
 app.use(express.json())  ;
@@ -101,3 +106,9 @@ app.listen(3000,()=>{
 // server.listen(3000,()=>{
 //     console.log('server is running')
 // })
+
+
+
+// npm i mongoose => object data modelling library.. 
+//by using mongoose library we can define schema , apply validation on our documents fields.   
+// mongoose is generally working as a layer between nodejs and mongodb.
