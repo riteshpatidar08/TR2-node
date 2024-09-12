@@ -13,7 +13,8 @@ mongoose.connect('mongodb://localhost:27017/shopping').then(()=>{
 
 //name , price , category
 
-
+//middleware for shopping routes
+app.use('/api', require('./routes/shoppingRoutes'))
 
 app.listen(PORT,()=>{
     console.log(`Server is running on the PORT ${PORT}`)
