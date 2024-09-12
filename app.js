@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost:27017/shopping').then(()=>{
     )
 })
 
+app.use(express.json())
 
 //name , price , category
 
@@ -26,3 +27,4 @@ app.listen(PORT,()=>{
 //step2 import the mongoose and call the connect method on it
 
 //NOTE npm i mongoose
+
