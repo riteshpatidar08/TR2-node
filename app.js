@@ -1,8 +1,17 @@
 const express = require('express') ;
 const app = express() ;
 const PORT = 8000 ;
+//require the mongoose package
+const mongoose = require('mongoose')
+ 
+//calling connect method to built connection between express app and mongodb 
+mongoose.connect('mongodb://localhost:27017/shopping').then(()=>{
+    console.log('Connection Successfull'
+    )
+})
 
 
+//name , price , category
 
 
 
@@ -15,4 +24,4 @@ app.listen(PORT,()=>{
 //step1 we have to install the ODM Library called mongoose.
 //step2 import the mongoose and call the connect method on it
 
-// npm i mongoose
+//NOTE npm i mongoose
