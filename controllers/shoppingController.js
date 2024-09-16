@@ -31,6 +31,8 @@ try {
 }
 
 
+
+
 exports.getSingleProduct = async(req,res) => {
     try {
         const product = await Product.findById(req.params.id)
@@ -56,4 +58,15 @@ exports.deleteProduct = async(req,res)=>{
 
 }
 
+//update whole product object put method :
 
+exports.updateProduct = async(req,res) => {
+    const updatedProduct =  req.body 
+    const updatedItem = await Product.findByIdAndUpdate(req.params.id , updatedProduct , {new : true})
+
+    if(updatedItem){
+        res.status(201).json({
+            data : updatedItem
+        })
+    }
+}
