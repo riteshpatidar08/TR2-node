@@ -70,3 +70,23 @@ exports.updateProduct = async(req,res) => {
         })
     }
 }
+
+//patch 
+
+exports.updateSingleField = async(req,res) => {
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.id , {$set:req.body}, {new:true})
+
+        if(updatedProduct){
+            res.status(201).json({
+                data : updatedProduct
+            })
+        }
+    } catch (error) {
+        res.status(400).send(error)
+    }
+
+}
+
+// req.body = {price : 10000}
+// updateOne({_Id : 'sfdadf'}, {$set : {fieldName : value}})
